@@ -73,8 +73,8 @@ export default function Navbar() {
                                                 <DropdownMenu.Link href={`/${auth.user.username}`}>
                                                     My profile
                                                 </DropdownMenu.Link>
-                                                <DropdownMenu.Link href={'#'}>
-                                                    Settings
+                                                <DropdownMenu.Link href={`/order`}>
+                                                    Your Order
                                                 </DropdownMenu.Link>
                                                 <DropdownMenu.Link
                                                     href={route('logout')}

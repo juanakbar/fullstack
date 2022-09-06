@@ -6,7 +6,7 @@ import Logo from '/public/img/Logo.png';
 export default function ResponsiveNavigation() {
     const { auth, carts_global_count } = usePage().props;
     return (
-        <nav className="border-b border-gray-800 backdrop-blur-sm bg-white/30 px-4 py-4 lg:hidden">
+        <nav className="border-b border-gray-800 backdrop-blur-sm bg-white/30 px-4 py-4 lg:hidden z-50 top-0">
             <div className="flex items-center justify-between">
                 <Link className="text-xl font-semibold text-gray-900" href="/">
                     {/* {import.meta.env.VITE_APP_NAME} */}
@@ -16,7 +16,7 @@ export default function ResponsiveNavigation() {
                 {auth.user ? (
                     <>
                         <Link class="inline-flex relative items-center rounded-lg border border-white/10 p-2.5 px-3.5 text-gray-800"
-                            href="{{ route('cart.index') }}">
+                            href={route('cart.index')}>
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" width="24" height="24"
                                 viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round">

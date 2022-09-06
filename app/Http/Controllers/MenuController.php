@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
 use App\Http\Resources\ProductResource;
 use App\Http\Resources\ProductSingleResource;
+use App\Models\Invoice;
 
 class MenuController extends Controller
 {
@@ -18,6 +19,7 @@ class MenuController extends Controller
      */
     public function index(Request $request)
     {
+        Cache::forget('carts_global_count');
         $category = Category::whereHas('products')->get();
         // dd($category);
         $products = Product::query()
@@ -28,7 +30,7 @@ class MenuController extends Controller
             ->withQueryString();
 
         // return ProductResource::collection($products);
-        Cache::forget('carts_global_count');
+
         return inertia('Menu/Index', [
             'products' => ProductResource::collection($products),
             'category' => $category

@@ -3,18 +3,41 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\MenuController;
+use App\Http\Controllers\TestController;
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\InvoiceController;
+use App\Http\Controllers\NotificationController;
 
 Route::get('/', IndexController::class)->name('index');
-Route::get('/menu', [MenuController::class, 'index'])->name('menu.index');
-Route::get('/menu/{product:slug}', [MenuController::class, 'show'])->name('menu.show');
 
 
-Route::middleware('auth')->group(function () {
-    Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
-    Route::delete('/cart/delete/{cart:id}', [CartController::class, 'destroy'])->name('cart.destroy');
-    Route::post('/cart/{product:slug}', [CartController::class, 'store'])->name('cart.store');
+// Route For Menu Controller
+Route::controller(MenuController::class)->group(function () {
+    Route::get('/menu', 'index')->name('menu.index');
+    Route::get('/menu/{product:slug}', 'show')->name('menu.show');
 });
 
+Route::middleware('auth')->group(function () {
+    // Route For Cart Controller
+    Route::controller(CartController::class)->group(function () {
+        Route::get('/cart', 'index')->name('cart.index');
+        Route::delete('/cart/delete/{cart:id}', 'destroy')->name('cart.destroy');
+        Route::post('/cart/{product:slug}', 'store')->name('cart.store');
+    });
+    // Route For Invoice Controller
+    Route::controller(InvoiceController::class)->group(function () {
+        Route::post('/invoice', 'store')->name('invoice.store');
+        Route::get('/invoice/{invoice:id}', 'show')->name('invoice.show');
+        Route::get('/order', 'order')->name('invoice.order');
+    });
+});
 
+Route::post('api/notification/handling', [NotificationController::class, 'hit']);
+
+
+Route::get('tes', [TestController::class, 'index']);
+
+Route::get('thanks', function () {
+    return 'thanks';
+})->name('thanks');
 require __DIR__ . '/auth.php';

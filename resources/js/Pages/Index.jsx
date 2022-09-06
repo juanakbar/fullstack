@@ -52,84 +52,82 @@ export default function Index(props) {
                         </div>
                     </div>
                 </section> */}
-                <div className="">
-                    <div className="min-h-screen flex items-center pt-10  sm:pt-16 lg:pt-8 lg:pb-14 lg:overflow-hidden">
-                        <div className="mx-auto max-w-7xl lg:px-8">
-                            <div className="lg:grid lg:grid-cols-2 lg:gap-8">
-                                <div className="mx-auto max-w-md px-4 sm:max-w-2xl sm:px-6 sm:text-center lg:px-0 lg:text-left lg:flex lg:items-center">
-                                    <div className="lg:py-24">
-                                        <h1 className="mt-4 text-4xl tracking-tight font-extrabold text-[#2F2105] sm:mt-5 sm:text-6xl lg:mt-6 xl:text-6xl">
-                                            <span className="block">Enjoy Your Coffe </span>
-                                            <span className="block text-[#2F2105]">Before Your Actvity</span>
-                                        </h1>
-                                        <p className="mt-3 text-base text-gray-700 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
-                                            Boost your productivity and build your mood with a
-                                            glass
-                                            of
-                                            coffee in the morning .
-                                        </p>
-                                        <div className="mt-10 sm:mt-12">
-                                            <form action="#" className="sm:max-w-xl sm:mx-auto lg:mx-0">
-                                                <div className="sm:flex">
-                                                    <div className="mt-3 sm:mt-0 sm:ml-3">
-                                                        <Link
-                                                            href='/menu'
-                                                            type="submit"
-                                                            className="block w-full py-3 px-4 rounded-md shadow bg-[#2F2105] text-white font-medium hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-300 focus:ring-offset-gray-900"
-                                                        >
-                                                            Get Your Coffe Now
-                                                        </Link>
-                                                    </div>
+                <div className="min-h-screen flex items-center pt-10  sm:pt-16 lg:pt-8 lg:pb-14 lg:overflow-hidden">
+                    <div className="mx-auto max-w-7xl lg:px-8">
+                        <div className="lg:grid lg:grid-cols-2 lg:gap-8">
+                            <div className="mx-auto max-w-md px-4 sm:max-w-2xl sm:px-6 sm:text-center lg:px-0 lg:text-left lg:flex lg:items-center">
+                                <div className="lg:py-24">
+                                    <h1 className="mt-4 text-4xl tracking-tight font-extrabold text-[#2F2105] sm:mt-5 sm:text-6xl lg:mt-6 xl:text-6xl">
+                                        <span className="block">Enjoy Your Coffe </span>
+                                        <span className="block text-[#2F2105]">Before Your Actvity</span>
+                                    </h1>
+                                    <p className="mt-3 text-base text-gray-700 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
+                                        Boost your productivity and build your mood with a
+                                        glass
+                                        of
+                                        coffee in the morning .
+                                    </p>
+                                    <div className="mt-10 sm:mt-12">
+                                        <form action="#" className="sm:max-w-xl sm:mx-auto lg:mx-0">
+                                            <div className="sm:flex">
+                                                <div className="mt-3 sm:mt-0 sm:ml-3">
+                                                    <Link
+                                                        href='/menu'
+                                                        type="submit"
+                                                        className="block w-full py-3 px-4 rounded-md shadow bg-[#2F2105] text-white font-medium hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-300 focus:ring-offset-gray-900"
+                                                    >
+                                                        Get Your Coffe Now
+                                                    </Link>
                                                 </div>
-                                            </form>
-                                        </div>
+                                            </div>
+                                        </form>
                                     </div>
                                 </div>
-                                <div className="mt-12 -mb-16 sm:-mb-48 lg:m-0 lg:relative">
-                                    <div className="mx-auto max-w-md px-4 sm:max-w-2xl sm:px-6 lg:max-w-none lg:px-0">
-                                        {/* Illustration taken from Lucid Illustrations: https://lucid.pixsellz.io/ */}
-                                        <img
-                                            className="w-full lg:absolute lg:inset-y-0 lg:left-0 lg:h-full lg:w-auto lg:max-w-none"
-                                            src={Hero}
-                                            alt="Hero"
-                                        />
-                                    </div>
+                            </div>
+                            <div className="mt-12 -mb-16 sm:-mb-48 lg:m-0 lg:relative">
+                                <div className="mx-auto max-w-md px-4 sm:max-w-2xl sm:px-6 lg:max-w-none lg:px-0">
+                                    {/* Illustration taken from Lucid Illustrations: https://lucid.pixsellz.io/ */}
+                                    <img
+                                        className="w-full lg:absolute lg:inset-y-0 lg:left-0 lg:h-full lg:w-auto lg:max-w-none"
+                                        src={Hero}
+                                        alt="Hero"
+                                    />
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div className="bg-white border-b">
-                <div className="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
-                    <div className="flex items-center justify-between space-x-4">
-                        <h2 className="text-lg font-medium text-gray-900">Our Menu</h2>
-                        <Link href={route('menu.index')} className="whitespace-nowrap text-sm font-medium text-indigo-600 hover:text-indigo-500">View all<span aria-hidden="true"> →</span>
-                        </Link>
-                    </div>
+                < div className="bg-white border-b" >
+                    <div className="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
+                        <div className="flex items-center justify-between space-x-4">
+                            <h2 className="text-lg font-medium text-gray-900">Our Menu</h2>
+                            <Link href={route('menu.index')} className="whitespace-nowrap text-sm font-medium text-indigo-600 hover:text-indigo-500">View all<span aria-hidden="true"> →</span>
+                            </Link>
+                        </div>
 
-                    {products.length ?
-                        (
-                            <>
-                                <div className="mt-6 grid grid-cols-1 gap-x-8 gap-y-8 sm:grid-cols-2 sm:gap-y-10 lg:grid-cols-4">
-                                    {products.map(product => (
-                                        <ProductItem key={product.id} product={product} />
-                                    ))}
+                        {products.length ?
+                            (
+                                <>
+                                    <div className="mt-6 grid grid-cols-1 gap-x-8 gap-y-8 sm:grid-cols-2 sm:gap-y-10 lg:grid-cols-4">
+                                        {products.map(product => (
+                                            <ProductItem key={product.id} product={product} />
+                                        ))}
+                                    </div>
+                                </>)
+                            : (
+
+                                <div className="text-center">
+                                    <svg className="mx-auto h-12 w-12 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" >
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" />
+                                    </svg>
+
+                                    <h3 className="mt-2 text-sm font-medium text-gray-900">No Item</h3>
                                 </div>
-                            </>)
-                        : (
 
-                            <div className="text-center">
-                                <svg className="mx-auto h-12 w-12 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" >
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" />
-                                </svg>
-
-                                <h3 className="mt-2 text-sm font-medium text-gray-900">No Item</h3>
-                            </div>
-
-                        )
-                    }
-                </div>
+                            )
+                        }
+                    </div>
+                </ div>
             </div>
         </>
     );

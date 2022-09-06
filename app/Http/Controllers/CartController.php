@@ -17,7 +17,7 @@ class CartController extends Controller
      */
     public function index(Request $request)
     {
-        $carts = Cart::whereBelongsTo($request->user())->get();
+        $carts = Cart::whereBelongsTo($request->user())->whereNull('paid_at')->get();
         return inertia('Cart/Index', [
             'carts' => CartResource::collection($carts->load('product')),
         ]);
@@ -52,7 +52,7 @@ class CartController extends Controller
             'total' => $product->price * $quantity,
         ]);
         Cache::forget('carts_global_count');
-        return redirect()->back();
+        return redirect()->route('menu.index');
     }
 
     /**

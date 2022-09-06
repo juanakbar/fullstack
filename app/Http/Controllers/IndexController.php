@@ -7,11 +7,13 @@ use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
 use App\Http\Resources\ProductResource;
+use App\Models\Invoice;
 
 class IndexController extends Controller
 {
     public function __invoke(Request $request)
     {
+
         $products = Product::query()
             ->with('category')
             ->when($request->category, fn ($q, $v) => $q->whereBelongsTo(Category::where('slug', $v)->first()))
