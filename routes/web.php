@@ -7,6 +7,7 @@ use App\Http\Controllers\TestController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\NotificationController;
+use App\Http\Controllers\OrderController;
 
 Route::get('/', IndexController::class)->name('index');
 
@@ -27,8 +28,12 @@ Route::middleware('auth')->group(function () {
     // Route For Invoice Controller
     Route::controller(InvoiceController::class)->group(function () {
         Route::post('/invoice', 'store')->name('invoice.store');
-        Route::get('/invoice/{invoice:id}', 'show')->name('invoice.show');
-        Route::get('/order', 'order')->name('invoice.order');
+        Route::get('/invoice/{invoice:order_id}', 'show')->name('invoice.show');
+    });
+
+    Route::controller(OrderController::class)->group(function () {
+        Route::get('/order/history', 'index')->name('order.index');
+        Route::get('/order/{order:order_id}', 'show')->name('order.show');
     });
 });
 

@@ -6,6 +6,7 @@ use App\Models\Cart;
 use App\Models\Invoice;
 use App\Models\Order;
 use App\Models\User;
+use App\Models\UserOrder;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
 
@@ -24,21 +25,20 @@ class NotificationController extends Controller
                 ]);
 
                 $cartQuery = Cart::query()->whereIn('id', $invoice->cart_ids);
-
                 $cartQuery->update([
                     'paid_at' => $request->settlement_time,
                 ]);
-
-                $product_ids = $cartQuery->pluck('product_id');
+                $product_ids = $cartQuery->pluck('id');
                 $user = User::find($invoice->user_id);
-                $user->products()->attach(
+                $user->order()->attach(
                     $product_ids,
                     [
-                        'name' => $invoice->name,
-                        'table' => $invoice->table,
+                        'invoice_id' => $invoice->id,
                         'order_id' => $invoice->order_id,
                     ]
                 );
+
+
                 Cache::flush();
             }
         }

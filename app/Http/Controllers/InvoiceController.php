@@ -19,9 +19,7 @@ class InvoiceController extends Controller
         $name = $request->collect('carts')->pluck('product');
         // dd($name->name);
         $total = (int) $request->total;
-        // dd($total);
         $item_details = $request->collect('carts')->pluck('total');
-        // dd($item_details);
         $cart_ids = $request->collect('carts')->pluck('id');
         $name = $request->name;
         $table = $request->table;
@@ -91,10 +89,6 @@ class InvoiceController extends Controller
     }
 
     public function order(Invoice $invoice)
-    {
-        $invoices = auth()->user()->invoices()->get();
-        return inertia('Invoices/Order', [
-            'invoices' => InvoiceResource::collection($invoices),
-        ]);
+    {;
     }
 }

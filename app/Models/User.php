@@ -5,6 +5,7 @@ namespace App\Models;
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use App\Models\Cart;
 
+use App\Models\Order;
 use App\Traits\HasManyCarts;
 use Illuminate\Http\Request;
 use Laravel\Sanctum\HasApiTokens;
@@ -60,8 +61,8 @@ class User extends Authenticatable
         return $this->hasMany(Invoice::class);
     }
 
-    public function products()
+    public function order()
     {
-        return $this->belongsToMany(Product::class, 'orders');
+        return $this->belongsToMany(Cart::class, 'user_orders');
     }
 }

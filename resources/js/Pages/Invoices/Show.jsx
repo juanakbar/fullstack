@@ -3,15 +3,7 @@ import App from '@/Layouts/App';
 import { Head } from '@inertiajs/inertia-react';
 
 export default function Show({ invoice }) {
-    // Echo.private(`invoice.paid.${auth.user.id}`).listen(
-    //     'InvoicePaid',
-    //     ({ invoice }) => {
-    //         if (invoice.status == 'settlement') {
-    //             Inertia.get('/products/me')
-    //         }
-    //     }
-    // );
-    console.log(invoice);
+
     return (
         <div>
             <Head title={`Your order - ${invoice.order_id}`} />
