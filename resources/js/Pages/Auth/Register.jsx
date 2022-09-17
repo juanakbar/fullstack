@@ -1,10 +1,10 @@
-import React, { useEffect } from 'react';
-import Button from '@/Components/Button';
-import Guest from '@/Layouts/Guest';
-import Input from '@/Components/Input';
-import InputError from '@/Components/InputError';
-import Label from '@/Components/Label';
-import { Head, Link, useForm } from '@inertiajs/inertia-react';
+import React, { useEffect } from 'react'
+import Button from '@/Components/Button'
+import Guest from '@/Layouts/Guest'
+import Input from '@/Components/Input'
+import InputError from '@/Components/InputError'
+import Label from '@/Components/Label'
+import { Head, Link, useForm } from '@inertiajs/inertia-react'
 
 export default function Register() {
     const { data, setData, post, processing, errors, reset } = useForm({
@@ -12,23 +12,22 @@ export default function Register() {
         email: '',
         password: '',
         password_confirmation: '',
-    });
+    })
 
     useEffect(() => {
         return () => {
-            reset('password', 'password_confirmation');
-        };
-    }, []);
+            reset('password', 'password_confirmation')
+        }
+    }, [])
 
     const onHandleChange = (event) => {
-        setData(event.target.name, event.target.type === 'checkbox' ? event.target.checked : event.target.value);
-    };
+        setData(event.target.name, event.target.type === 'checkbox' ? event.target.checked : event.target.value)
+    }
 
     const submit = (e) => {
-        e.preventDefault();
-
-        post(route('register'));
-    };
+        e.preventDefault()
+        post(route('register'))
+    }
 
     return (
         <Guest>
@@ -42,10 +41,10 @@ export default function Register() {
                         type="text"
                         name="name"
                         value={data.name}
+                        handleChange={onHandleChange}
                         className="mt-1 block w-full"
                         autoComplete="name"
                         isFocused={true}
-                        handleChange={onHandleChange}
                         required
                     />
 
@@ -110,5 +109,5 @@ export default function Register() {
                 </div>
             </form>
         </Guest>
-    );
+    )
 }

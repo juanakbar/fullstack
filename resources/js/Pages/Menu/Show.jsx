@@ -1,31 +1,33 @@
-import React from 'react';
-import App from '@/Layouts/App';
-import { Head, Link, useForm } from '@inertiajs/inertia-react';
-import { numberFormat } from '@/Libs/Helper';
-import { Inertia } from '@inertiajs/inertia';
-import Button from '@/Components/Button';
-import Label from '@/Components/Label';
-import Input from '@/Components/Input';
-import InputError from '@/Components/InputError';
-import toast from 'react-hot-toast';
+import React from 'react'
+import App from '@/Layouts/App'
+import { Head, Link, useForm } from '@inertiajs/inertia-react'
+import { numberFormat } from '@/Libs/Helper'
+import { Inertia } from '@inertiajs/inertia'
+import Button from '@/Components/Button'
+import Label from '@/Components/Label'
+import Input from '@/Components/Input'
+import InputError from '@/Components/InputError'
+import toast from 'react-hot-toast'
 
 export default function Show({ props, product }) {
+    const htmlString = product.description
+
     const { data, setData, post, processing, errors, reset } = useForm({
         quantity: '',
-    });
+    })
     const onHandleChange = (event) => {
-        setData(event.target.name, event.target.type === 'checkbox' ? event.target.checked : event.target.value);
-    };
+        setData(event.target.name, event.target.type === 'checkbox' ? event.target.checked : event.target.value)
+    }
 
     const submit = (e) => {
-        e.preventDefault();
+        e.preventDefault()
         Inertia.post(route('cart.store', product), {
             ...data,
 
         }, {
             onSuccess: () => toast.success('Product added to cart'),
-        });
-    };
+        })
+    }
     return (
         <>
             <Head title={product.name} />
@@ -67,7 +69,7 @@ export default function Show({ props, product }) {
                                 <p className="text-lg text-gray-900 sm:text-xl mr-3">Rp. {numberFormat(product.price)} </p>
                             </div>
                             <div className="mt-4 space-y-6">
-                                <p className="text-base leading-relaxed text-gray-500">{product.description}</p>
+                                <div className="text-base leading-relaxed text-gray-500" dangerouslySetInnerHTML={{ __html: htmlString }} />
                             </div>
                             <div className="mt-6 flex items-center">
                                 {/* Heroicon name: solid/check */}
@@ -100,13 +102,11 @@ export default function Show({ props, product }) {
                                             handleChange={onHandleChange}
                                             required
                                         />
-
                                         <InputError message={errors.email} className="mt-2" />
                                     </div>
                                 </div>
                                 <div className="mt-10">
                                     <Button type='submit' className="w-full bg-indigo-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-indigo-500">Add to cart</Button>
-
                                 </div>
                             </form>
                         </section>
@@ -115,7 +115,7 @@ export default function Show({ props, product }) {
             </div>
 
         </>
-    );
+    )
 }
 
 Show.layout = page => <App children={page} />

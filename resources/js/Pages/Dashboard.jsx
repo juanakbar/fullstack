@@ -1,21 +1,22 @@
-import React from 'react';
-import App from '@/Layouts/App';
-import { Head } from '@inertiajs/inertia-react';
+import React from 'react'
+import { Head } from '@inertiajs/inertia-react'
+import Admin from '@/Layouts/Admin'
+import WelcomeBanner from '@/Layouts/Dashboard/WelcomeBanner'
+import Income from '@/Layouts/Dashboard/Income'
+import Customer from '@/Layouts/Dashboard/Customer'
 
-export default function Dashboard(props) {
+export default function Dashboard({ customers, ...props }) {
+    // const { data: customers, meta, links } = props.customers
+    // console.log(customers)
     return (
         <>
             <Head title="Dashboard" />
 
-            <div className="py-12">
-                <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                    <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                        <div className="p-6 bg-white border-b border-gray-200">You're logged in!</div>
-                    </div>
-                </div>
+            <div className="grid grid-cols-12 gap-6">
+                <Income />
             </div>
         </>
-    );
+    )
 }
 
-Dashboard.layout = (page) => <App children={page} />;
+Dashboard.layout = (page) => <Admin children={page} />

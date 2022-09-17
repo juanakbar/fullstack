@@ -26,9 +26,13 @@
     "dependencies": {
         "@heroicons/react": "^1.0.6",
         "@tailwindcss/aspect-ratio": "^0.4.0",
+        "@tinymce/tinymce-react": "^4.2.0",
         "clsx": "^1.2.1",
         "daisyui": "^2.25.0",
         "flowbite": "^1.5.2",
-        "react-hot-toast": "^2.3.0"
+        "isomorphic-dompurify": "^0.22.0",
+        "marked": "^4.1.0",
+        "react-hot-toast": "^2.3.0",
+        "react-router-dom": "^6.3.0"
     }
 }

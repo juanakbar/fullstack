@@ -20,7 +20,7 @@ class ProductSingleResource extends JsonResource
             'name' => $this->name,
             'slug' => $this->slug,
             'price' => $this->price,
-            'picture' => $this->picture ? $this->picture : 'https://fakeimg.pl/1000x1000/?text=Book&font=noto',
+            'picture' => $this->picture ? Storage::url($this->picture) : 'https://fakeimg.pl/1000x1000/?text=Book&font=noto',
             'description' => $this->description,
             'category' => [
                 'id' => $this->category->id,

@@ -13,10 +13,7 @@ export default function App({ auth, header, children }) {
 
     return (
         <div className="min-h-screen bg-gray-100">
-
             <Navbar />
-
-
             {
                 header && (
                     <header className="bg-white shadow">

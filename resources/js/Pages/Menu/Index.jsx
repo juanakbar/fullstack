@@ -1,12 +1,12 @@
-import React, { Fragment } from 'react';
-import App from '@/Layouts/App';
-import { Head, Link, usePage } from '@inertiajs/inertia-react';
-import Hero from '/Public/img/menu-hero.jpg';
-import ProductItem from '@/Components/ProductItem';
+import React, { Fragment } from 'react'
+import App from '@/Layouts/App'
+import { Head, Link, usePage } from '@inertiajs/inertia-react'
+import Hero from '/Public/img/menu-hero.jpg'
+import ProductItem from '@/Components/ProductItem'
 import { Menu, Transition } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/solid'
-import Pagination from '@/Components/Pagination';
-import clsx from 'clsx';
+import Pagination from '@/Components/Pagination'
+import clsx from 'clsx'
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
@@ -14,7 +14,7 @@ function classNames(...classes) {
 
 
 export default function Index({ category, ...props }) {
-    const { data: products, meta, links } = props.products;
+    const { data: products, meta, links } = props.products
     // const { categories_global } = usePage().props;
     return (
         <>
@@ -104,7 +104,7 @@ export default function Index({ category, ...props }) {
                 </div>
             </div>
         </>
-    );
+    )
 }
 
 Index.layout = page => <App children={page} />

@@ -5,9 +5,12 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\IndexController;
-use App\Http\Controllers\InvoiceController;
-use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\InvoiceController;
+use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\NotificationController;
+use App\Http\Controllers\Admin\ProductsController;
+use App\Http\Controllers\Admin\DashboardController;
 
 Route::get('/', IndexController::class)->name('index');
 
@@ -39,10 +42,15 @@ Route::middleware('auth')->group(function () {
 
 Route::post('api/notification/handling', [NotificationController::class, 'hit']);
 
-
-Route::get('tes', [TestController::class, 'index']);
-
 Route::get('thanks', function () {
     return 'thanks';
 })->name('thanks');
+
+
+// Admin Dashboard
+Route::group(['middleware' => ['role:Super Admin']], function () {
+    Route::get('/dashboard', DashboardController::class)->name('dashboard');
+    Route::resource('user', UserController::class);
+    Route::resource('products', ProductsController::class);
+});
 require __DIR__ . '/auth.php';

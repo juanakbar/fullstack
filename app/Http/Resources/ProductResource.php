@@ -20,7 +20,10 @@ class ProductResource extends JsonResource
             'price' => $this->price,
             'slug' => $this->slug,
             'name' => $this->name,
-            'picture' => $this->picture ? $this->picture  : Storage::url($this->picture),
+            'picture' => $this->picture ? Storage::url($this->picture) : null,
+            // 'qr_code' => $this->payment_type !== 'bank_transfer' ? $this['payment_info']['qr_code'] : null,
+            // 'status' => $this->status !== 0 ?  'Tersedia' : 'Tidak Tersedia',
+            'status' => $this->status,
             'category' => [
                 'id' => $this->category->id,
                 'name' => $this->category->name,
