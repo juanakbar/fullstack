@@ -37,8 +37,6 @@ class NotificationController extends Controller
                         'order_id' => $invoice->order_id,
                     ]
                 );
-
-
                 Cache::flush();
             }
         }

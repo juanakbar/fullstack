@@ -1,14 +1,18 @@
 import React, { useState } from 'react'
+import { Toaster } from 'react-hot-toast'
 import Header from './Dashboard/Header'
 import Income from './Dashboard/Income'
 import Sidebar from './Dashboard/Sidebar'
-import WelcomeBanner from './Dashboard/WelcomeBanner'
 
 export default function Admin({ children, Banner }) {
     const [sidebarOpen, setSidebarOpen] = useState(false)
     return (
         <>
-            <div className="flex h-screen overflow-hidden">
+            <div className="bg-white flex h-screen overflow-hidden">
+                <Toaster
+                    position="top-right"
+                    reverseOrder={false}
+                />
                 <Sidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
                 <div className="relative flex flex-col flex-1 overflow-y-auto overflow-x-hidden">
                     {/*  Site header */}

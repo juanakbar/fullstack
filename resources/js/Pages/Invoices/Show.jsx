@@ -23,7 +23,7 @@ export default function Show({ invoice }) {
                                     <div>
                                         <strong className="font-semibold uppercase">
                                             {invoice.bank.name}
-                                        </strong>{' '}
+                                        </strong>
                                         Virtual Account Number
                                     </div>
                                     <div>{invoice.bank.va_number}</div>

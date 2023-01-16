@@ -22,7 +22,6 @@ class ProductFactory extends Factory
             'slug' => str($name)->slug(),
             'price' => rand(1000, 90000),
             'description' => $this->faker->sentence(10),
-            'picture' =>  'https://fakeimg.pl/1000x1000/?text=Menu&font=noto'
         ];
     }
 }

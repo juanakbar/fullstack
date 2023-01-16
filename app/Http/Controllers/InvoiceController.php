@@ -89,6 +89,24 @@ class InvoiceController extends Controller
     }
 
     public function order(Invoice $invoice)
-    {;
+    {
+    }
+
+
+    public function invoice()
+    {
+        $invoice = Invoice::where('user_id', Auth::user()->id)
+            ->get();
+        return inertia('Invoices/Table', [
+            'invoice' => $invoice
+        ]);
+    }
+
+    public function receipt(Invoice $invoice)
+    {
+        // dd($invoice);
+        return inertia('Invoices/Index', [
+            'invoice' => $invoice
+        ]);
     }
 }

@@ -80,7 +80,7 @@ export default function Order({ orderedBy }) {
                                     </div>
                                 </>
                                     : <>
-                                        <Link href={`/menu`}
+                                        {/* <Link href={`/menu`}
                                             type="button"
                                             className=" mt-10 block w-full border-2 border-gray-300 border-dashed rounded-lg p-12 text-center hover:border-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                                         >
@@ -101,7 +101,7 @@ export default function Order({ orderedBy }) {
                                             </svg>
                                             <span className="mt-2 block text-sm font-medium text-gray-900">The cart is currently empty.</span>
                                             <span className="mt-2 block text-sm font-medium text-gray-900">Countinue <Link className='text-blue-500'>shopping</Link></span>
-                                        </Link>
+                                        </Link> */}
                                     </>}
                             </div>
                         </div>

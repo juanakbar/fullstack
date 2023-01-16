@@ -3,8 +3,8 @@
 namespace App\Models;
 
 use App\Enums\InvoiceStatus;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Invoice extends Model
 {
@@ -17,4 +17,9 @@ class Invoice extends Model
         'cart_ids' => 'array',
         'status' => InvoiceStatus::class,
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

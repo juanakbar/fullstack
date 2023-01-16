@@ -24,6 +24,7 @@ class ProductsController extends Controller
             ->with('category')
             ->when($request->category, fn ($q, $v) => $q->whereBelongsTo(Category::where('slug', $v)->first()))
             ->select('id', 'price', 'slug', 'name', 'picture', 'category_id', 'status')
+            ->latest()
             ->paginate(12)
             ->withQueryString();
 
@@ -82,16 +83,14 @@ class ProductsController extends Controller
     {
         //
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+    public function edit(Product $product)
     {
-        //
+        // return $product->load('category');
+        $category = Category::get();
+        return inertia('Dashboard/Products/Edit', [
+            'product' => $product->load('category'),
+            'category' => $category,
+        ]);
     }
 
     /**
@@ -101,9 +100,23 @@ class ProductsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, PRoduct $product)
     {
-        //
+        // dd($request->all());
+        $picture = $request->file('picture');
+        $product->update([
+            'name' => $name = $request->name,
+            'slug' => $slug = Str::slug($request->name . '-' .  Str::random(10)),
+            'price' => $request->price,
+            'category_id' => $request->category_id,
+            'status' => $request->status,
+            'description' => $request->description,
+            'picture' => $request->hasFile('picture') ? $picture->storeAs(
+                'images/products',
+                $slug . '.' . $picture->extension()
+            ) : null,
+        ]);
+        return to_route('menu.show', $product);
     }
 
     /**
@@ -112,8 +125,11 @@ class ProductsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($slug)
     {
-        //
+        // delete product by slug
+        $product = Product::where('slug', $slug)->firstOrFail();
+        $product->delete();
+        return back();
     }
 }

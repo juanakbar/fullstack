@@ -121,11 +121,11 @@ export default function Sidebar({ sidebarOpen, setSidebarOpen }) {
                                 <span class="text-[15px] ml-4 text-gray-200 font-bold">Dashboard</span>
                             </NavLink>
                             <NavLink
-                                href={route('user.index')}
+                                href={route('users.index')}
                                 class="p-2.5 mt-3 flex items-center rounded-md duration-300 cursor-pointer hover:bg-blue-600 text-white"
                             >
                                 <UserIcon className='shrink-0 h-6 w-6 mr-5' />
-                                <span class="text-[15px] ml-4 text-gray-200 font-bold">User</span>
+                                <span className="text-[15px] ml-4 text-gray-200 font-bold">User</span>
                             </NavLink>
                             <NavLink
                                 href={route('products.index')}
@@ -136,10 +136,10 @@ export default function Sidebar({ sidebarOpen, setSidebarOpen }) {
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" />
                                 </svg>
 
-                                <span class="text-[15px] ml-4 text-gray-200 font-bold">Products</span>
+                                <span className="text-[15px] ml-4 text-gray-200 font-bold">Products</span>
                             </NavLink>
                             <NavLink
-                                href={route('user.index')}
+                                href={route('categories.index')}
                                 class="p-2.5 mt-3 flex items-center rounded-md duration-300 cursor-pointer hover:bg-blue-600 text-white"
                             >
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 shrink-0 mr-5">
@@ -148,6 +148,22 @@ export default function Sidebar({ sidebarOpen, setSidebarOpen }) {
                                 {/*
                                 <UserIcon className='shrink-0 h-6 w-6 mr-5' /> */}
                                 <span class="text-[15px] ml-4 text-gray-200 font-bold">Category</span>
+                            </NavLink>
+                            <NavLink
+                                href={route('invoice.index')}
+                                class="p-2.5 mt-3 flex items-center rounded-md duration-300 cursor-pointer hover:bg-blue-600 text-white"
+                            >
+                                <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 shrink-0 mr-5" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                    <path d="M14 3v4a1 1 0 0 0 1 1h4"></path>
+                                    <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z"></path>
+                                    <line x1="9" y1="7" x2="10" y2="7"></line>
+                                    <line x1="9" y1="13" x2="15" y2="13"></line>
+                                    <line x1="13" y1="17" x2="15" y2="17"></line>
+                                </svg>
+                                {/*
+                                <UserIcon className='shrink-0 h-6 w-6 mr-5' /> */}
+                                <span class="text-[15px] ml-4 text-gray-200 font-bold">Invoice</span>
                             </NavLink>
 
                         </ul>
