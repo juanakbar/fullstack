@@ -24,7 +24,7 @@ export default function Navbar() {
                                     href='/'
                                     className={'text-red-500 '}
                                 >
-                                    Kedai Gambling
+                                    Pethsop
                                 </NavLink>
                             </div>
                             <div className='flex justify-between'>

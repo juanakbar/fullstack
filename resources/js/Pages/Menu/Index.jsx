@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import App from '@/Layouts/App'
 import { Head, Link, usePage } from '@inertiajs/inertia-react'
-import Hero from '/Public/img/menu-hero.jpg'
+import Hero from '/Public/img/3767154.jpg'
 import ProductItem from '@/Components/ProductItem'
 import { Menu, Transition } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/solid'
@@ -27,8 +27,8 @@ export default function Index({ category, ...props }) {
                         </div>
                         <div className="flex flex-col justify-center mt-5 mb-8 md:mt-0 sm:w-1/2 md:w-7/12 sm:pr-16">
                             <p className="mb-2 text-sm font-semibold leading-none text-left text-indigo-600 uppercase">
-                                Kedai Gambling</p>
-                            <h3 className="mt-2 text-2xl sm:text-left md:text-4xl">Cozy Place To Get Lunch and Coffe</h3>
+                                Petshop</p>
+                            <h3 className="mt-2 text-2xl sm:text-left md:text-4xl">Get ur pet good products</h3>
                         </div>
                     </div>
                 </div>

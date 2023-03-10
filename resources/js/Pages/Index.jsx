@@ -1,7 +1,7 @@
 import React from 'react';
 import App from '@/Layouts/App';
-import Hero from '/public/img/img-hero.svg';
-import Bg from '/public/img/bg-image.png'
+import Hero from '/public/img/hero.png';
+import Bg from '/public/img/7440838-ai.png'
 import { Head, Link } from '@inertiajs/inertia-react';
 import ProductItem from '@/Components/ProductItem';
 
@@ -11,6 +11,8 @@ export default function Index(props) {
         <>
             <Head title="Home" />
             <div style={{
+                width: 'auto',
+                height: 'auto',
                 backgroundImage: `url("${Bg}")`,
                 backgroundRepeat: 'no-repeat',
                 backgroundPosition: 'center',
@@ -58,14 +60,12 @@ export default function Index(props) {
                             <div className="mx-auto max-w-md px-4 sm:max-w-2xl sm:px-6 sm:text-center lg:px-0 lg:text-left lg:flex lg:items-center">
                                 <div className="lg:py-24">
                                     <h1 className="mt-4 text-4xl tracking-tight font-extrabold text-[#2F2105] sm:mt-5 sm:text-6xl lg:mt-6 xl:text-6xl">
-                                        <span className="block">Enjoy Your Coffe </span>
-                                        <span className="block text-[#2F2105]">Before Your Actvity</span>
+
+                                        <span className="block">You Pet deserves</span>
+                                        <span className="block text-[#2F2105]">more Care</span>
                                     </h1>
                                     <p className="mt-3 text-base text-gray-700 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
-                                        Boost your productivity and build your mood with a
-                                        glass
-                                        of
-                                        coffee in the morning .
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus, quaerat!
                                     </p>
                                     <div className="mt-10 sm:mt-12">
                                         <form action="#" className="sm:max-w-xl sm:mx-auto lg:mx-0">
@@ -76,7 +76,7 @@ export default function Index(props) {
                                                         type="submit"
                                                         className="block w-full py-3 px-4 rounded-md shadow bg-[#2F2105] text-white font-medium hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-300 focus:ring-offset-gray-900"
                                                     >
-                                                        Get Your Coffe Now
+                                                        Buy Now
                                                     </Link>
                                                 </div>
                                             </div>
