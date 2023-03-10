@@ -1,4 +1,7 @@
 ## Getting Started
+clone dulu repository git ini
+```bash
+git clone 
 Setelah clone Repository ini jalankan perintah menggunakan terminal
 ```bash
 cd e-service-Fullstack/
