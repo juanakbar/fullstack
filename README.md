@@ -1,10 +1,11 @@
 ## Getting Started
 clone dulu repository git ini
 ```bash
-git clone 
+git clone https://github.com/juanakbar/fullstack.git petshop/
+```
 Setelah clone Repository ini jalankan perintah menggunakan terminal
 ```bash
-cd e-service-Fullstack/
+cd petshop/
 composer install
 ```
 Setelah selesai  jalankan perintah beirkut
@@ -32,18 +33,15 @@ Lalu, ketikan:
 
 ```bash
 npm install
-# or
-yarn
 ```
+seteleh itu buka 2 terminal di folder petshop
 
-Setelah itu, ketikan:
+Setelah itu diterminal pertama, ketikan:
 
 ```bash
-npm run dev --watch
-# or
-yarn
+npm run dev
 ```
-seteleh selesai Jalankan perintah migrasi dan seed database
+seteleh selesai Jalankan perintah migrasi dan seed database di terminal ke dua
 ```php
 php artisan migrate:fresh --seed
 ```
@@ -52,4 +50,4 @@ seteleh selesai Jalankan development server laravel
 php artisan artisan serve
 ```
 
-dan akses melalu localhost
+dan akses melalu 127.0.0.1:8000
